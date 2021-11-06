@@ -1,15 +1,14 @@
 package lesson10;
 
 public class Recursion {
-    public static int COUNT =0;
     public static void main(String[] args) {
-
-     recursion();
-
+        recursion(0);
     }
-
-    public static void recursion(){
-        System.out.println("Hello" + ++COUNT );
-        recursion();
+    public static void recursion(int count) {
+        System.out.println("Hello " + ++count);
+        if (count >= 100) {
+            return;
+        }
+        recursion(count);
     }
 }
