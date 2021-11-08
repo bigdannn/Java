@@ -1,6 +1,5 @@
 package Homework7;
 
-import kotlin.math.MathKt;
 
 public class Ragby {
     public static void main(String[] args) {

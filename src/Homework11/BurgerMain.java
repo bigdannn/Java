@@ -2,7 +2,6 @@ package Homework11;
 
 public class BurgerMain {
     public static void main(String[] args) {
-        Burger b = new Burger();
 
         System.out.println();
 
@@ -14,21 +13,21 @@ public class BurgerMain {
         Burger burger3 = new Burger(false, 1);
 
 
-        compare(burger, burger1, "Everything is cool. You have two identical burgers. ", "Burgers are not identical.");
-        compare(burger1, burger2, "Everything is cool. You have two identical burgers. ", "Burgers are not identical.");
-        compare(burger2, burger3, "Everything is cool. You have two identical burgers. ", "Burgers are not identical.");
-        compare(burger3, burger, "Everything is cool. You have two identical burgers. ", "Burgers are not identical.");
-        compare(burger, burger2, "Everything is cool. You have two identical burgers. ", "Burgers are not identical.");
-        compare(burger1, burger3, "Everything is cool. You have two identical burgers. ", "Burgers are not identical.");
+        compare(burger, burger1);
+        compare(burger1, burger2);
+        compare(burger2, burger3);
+        compare(burger3, burger);
+        compare(burger, burger2);
+        compare(burger1, burger3);
 
     }
-    public static void compare(Burger burger, Burger burger1, String s, String s2){
+    public static void compare(Burger burger, Burger burger1){
         if (burger == burger1){
-            System.out.println(s);
-        } else {if (burger.equals(burger1)){
-            System.out.println(s);
+            System.out.println("Everything is cool. You have two identical burgers. ");
+        } else if (burger.equals(burger1)){
+            System.out.println("Everything is cool. You have two identical burgers. ");
         } else {
-            System.out.println(s2);
-        }}
+            System.out.println("Burgers are not identical.");
+        }
     }
 }

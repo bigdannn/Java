@@ -5,12 +5,6 @@ public class Burger {
     public boolean mayonnaise;
     public int meat;
 
-
-
-    public Burger() {
-        System.out.println("Greetings! Which burger do you want to eat&");
-    }
-
     public Burger(boolean mayonnaise) {
         this.mayonnaise = mayonnaise;
         if (!mayonnaise) {
@@ -25,15 +19,14 @@ public class Burger {
         this.mayonnaise = mayonnaise;
         if (meat == 1 && mayonnaise){
             System.out.println("You have default burger. " + toString());
-        }
-        if (meat == 2 && mayonnaise){
+        } else if (meat == 2 && mayonnaise){
             System.out.println("You have burger with double Meat. " + toString());
-        }
-        if (meat == 1 && !mayonnaise){
+        } else if (meat == 1 && !mayonnaise){
             System.out.println("You have Dietary Burger. " + toString());
-        }
-        if (meat == 2 && !mayonnaise){
+        } else if (meat == 2 && !mayonnaise){
             System.out.println("You have Dietary burger with double meat." + toString());
+        } else {
+            System.out.println("Sorry, we don't have that type of burger in our menu");
         }
 
     }

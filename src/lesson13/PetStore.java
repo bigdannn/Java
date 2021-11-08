@@ -22,7 +22,7 @@ public class PetStore {
             Animal animal;
             String name;
             switch(input){
-                case "cat";
+                case "cat":
                     System.out.println("input cat name");
                     name = bufferreader.readLine();
                     animal = new Cat(name);
