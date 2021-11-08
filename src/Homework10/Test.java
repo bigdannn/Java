@@ -5,9 +5,6 @@ import java.util.Arrays;
 public class Test {
     public static void main(String[] args) {
         int number = (int) (Math.random()*3);
-        String [] letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "v", "x", "y", "z"};
-        int [] numbers = {1, 2 ,3 ,4, 5, 6, 7, 8, 9, 0};
-        String [] upperLetters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "V", "X", "Y", "Z"};
 
 
         System.out.println(random());
@@ -61,7 +58,6 @@ public class Test {
         String str = builder.toString();
 
         if (useLetters && useNumbers && useUpper && useSlash){
-            System.out.println(str + " - This is your new password.");
             return str;
         } else {
             return random();
