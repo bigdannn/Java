@@ -19,13 +19,12 @@ public class Property {
         this.square = square;
         this.earnings = earnings;
     }
-    public int taxCalculation(int square){
-        int tax = square*15;
-        return tax;
+    public int taxCalculation(){
+        return square*15;
     }
     @Override
     public String toString(){
-        return "Your property tax will be " + taxCalculation(square) + "₴";
+        return "Your property tax will be " + taxCalculation() + "₴";
     }
 
 }
