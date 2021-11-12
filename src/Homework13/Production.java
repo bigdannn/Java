@@ -2,18 +2,19 @@ package Homework13;
 
 public class Production extends Property{
 
-    public Production(int square){
+    public Production(double square){
         super(square);
         System.out.println(toString());
     }
 
-    @Override
-    public int taxCalculation(){
+    public double calculateTax(){
         return square*15;
     }
-    @Override
-    public String toString(){
-        return "Your property tax will be " + taxCalculation() + "₴";
+    public void taxSum(){
+        System.out.println(toString());
     }
 
+    public String toString(){
+        return "Your property tax will be " + calculateTax() + "₴";
+    }
 }

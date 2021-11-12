@@ -18,7 +18,6 @@ public class PropertyTax {
 
         ArrayList<Property> properties = new ArrayList<>();
 
-
         String input;
         int square;
         int earnings;
@@ -36,11 +35,13 @@ public class PropertyTax {
                     System.out.println("How much money do you earn by using your property?");
                     earnings = Integer.parseInt(reader.readLine());
                     property = new Trader(square, earnings);
+                    properties.add(property);
                     break;
                 case "production":
                     System.out.println("How much square meters does your property has?");
                     square = Integer.parseInt(reader.readLine());
                     property = new Production(square);
+                    properties.add(property);
                     break;
                 case "residential":
                     System.out.println("How much square meters does your property has?");
@@ -53,12 +54,14 @@ public class PropertyTax {
                         s = false;
                         property = new Residential(square, s);
                     }
+                    properties.add(property);
                     break;
                 default:
                     System.out.println("We don't know such type of property. Sorry.");
             }
         }
-
+        for (Property prop : properties) {
+            System.out.println(prop.calculateTax());
+        }
     }
-
 }

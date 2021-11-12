@@ -2,6 +2,8 @@ package Homework13;
 
 public class Residential extends Property{
 
+    boolean subsidies;
+
     public Residential(int square, boolean subsidies){
         super(square);
         this.subsidies = subsidies;
@@ -9,18 +11,20 @@ public class Residential extends Property{
         System.out.println(toString());
     }
     @Override
-    public int taxCalculation(){
-        int answer;
+    public double calculateTax(){
+        double answer;
         if (subsidies){
-            answer = (int) ((square*15) - (square*15)*0.2);
+            answer = (square*taxAmountPerMeter) - (square*taxAmountPerMeter)*0.2;
         } else {
-            answer = (square*15);
+            answer = (square*taxAmountPerMeter);
         }
         return answer;
     }
+    public void taxCalculation(){
+        System.out.println("Your property tax will be" + calculateTax() + "₴");
+    }
 
-    @Override
     public String toString(){
-        return "Your property tax will be " + taxCalculation() + "₴";
+        return "Your property tax will be " + calculateTax() + "₴";
     }
 }
