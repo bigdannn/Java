@@ -1,42 +1,53 @@
 package lesson13;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class PetStore {
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferreader = new BufferedReader(new InputStreamReader(System.in));
 
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         ArrayList<Animal> animals = new ArrayList<>();
-        animals.add(new Parrot("Kesha"));
-        animals.add(new Cat("Pixel"));
-        animals.add(new Dog("Ted"));
-        animals.add(new Animal("unknown"));
 
         String input;
-        while(!(input = bufferreader.readLine()).equals("exit")){
+        while(!(input = bufferedReader.readLine()).equals("exit")) {
 
             Animal animal;
             String name;
-            switch(input){
+            switch (input) {
                 case "cat":
-                    System.out.println("input cat name");
-                    name = bufferreader.readLine();
+                    System.out.println("input cat name: ");
+                    name = bufferedReader.readLine();
                     animal = new Cat(name);
+                    animals.add(animal);
                     break;
+                case "dog":
+                    System.out.println("input dog name: ");
+                    name = bufferedReader.readLine();
+                    animal = new Dog(name);
+                    animals.add(animal);
+                    break;
+                case "parrot":
+                    System.out.println("input parrot name: ");
+                    name = bufferedReader.readLine();
+                    animal = new Parrot(name);
+                    animals.add(animal);
+                    break;
+                default:
+                    System.out.println("unknown animal type " + input);
             }
 
         }
 
-        for (Animal animal1: animals) {
-            animal1.speak();
+        for (Animal animal: animals) {
+            animal.speak();
         }
 
-
     }
-
 
 }
